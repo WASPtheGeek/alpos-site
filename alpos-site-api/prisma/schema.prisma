@@ -1,0 +1,150 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output = "./generated/client"
+}
+
+generator zod {
+  provider = "zod-prisma-types"
+  output = "./generated/zod-schemas"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+model User {
+  id String @id @default(uuid())
+  /// @zod.string.email()
+  email String @unique
+  /// @zod.string.min(8)
+  password String
+  role Role @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  token Token?
+}
+
+model Token {
+  id String @id @default(uuid())
+  value String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+model Post {
+  id String @id @default(uuid())
+  views Int @default(0)
+  isArchived Boolean @default(true)
+
+  /// @zod.string.min(3)
+  title_en String?
+  description_en String?
+  content_en String?
+
+  /// @zod.string.min(3)
+  title_lv String?
+  description_lv String?
+  content_lv String?
+
+  /// @zod.string.min(3)
+  title_ru String?
+  description_ru String?
+  content_ru String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id String @id @default(uuid())
+  isActive Boolean @default(true)
+
+  /// @zod.string.min(3)
+  name_en String?
+  description_en String?
+
+  /// @zod.string.min(3)
+  name_lv String?
+  description_lv String?
+
+  /// @zod.string.min(3)
+  name_ru String?
+  description_ru String?
+
+  imagePath String
+
+  products Product[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id String @id @default(uuid())
+  isActive Boolean @default(true)
+  isAvailable Boolean @default(true)
+
+  /// @zod.string.min(3)
+  name_en String?
+  description_en String?
+
+  /// @zod.string.min(3)
+  name_lv String?
+  description_lv String?
+
+  /// @zod.string.min(3)
+  name_ru String?
+  description_ru String?
+
+  manufacturer String?
+  country String?
+  price Decimal
+  priceExcludingVAT Decimal
+
+  imagePath String
+  filePath String
+
+  categoryId String
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model TextToDisplay {
+  id String @id @default(uuid())
+  key String @unique
+  lv String?
+  en String?
+  ru String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Contact {
+  id String @id @default(uuid())
+  name String
+  surname String
+  position String?
+  phone String
+  /// @zod.string.email()
+  email String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
