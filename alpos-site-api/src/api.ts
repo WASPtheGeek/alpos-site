@@ -1,11 +1,20 @@
-import express from "express";
-import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
+import express from "express";
 import i18next from "i18next";
-import middleware from "i18next-http-middleware";
 import Backend from "i18next-fs-backend";
+import middleware from "i18next-http-middleware";
 import path from "path";
-import localizationRouter from "./routes/localizationRoutes";
+import {
+  authRouter,
+  categoryRouter,
+  contactRouter,
+  localizationRouter,
+  postRouter,
+  productRouter,
+  textToDisplayRouter,
+  userRouter,
+} from "./routes";
 
 i18next
   .use(middleware.LanguageDetector) // Enables automatic language detection
@@ -51,6 +60,13 @@ app.use((req, res, next) => {
 
 // register routes
 app.use("/localizations", localizationRouter);
+app.use("/contacts", contactRouter);
+app.use("/users", userRouter);
+app.use("/auth", authRouter);
+app.use("/posts", postRouter);
+app.use("/products", productRouter);
+app.use("/categories", categoryRouter);
+app.use("/textToDisplay", textToDisplayRouter);
 
 // start server
 const PORT = process.env.PORT!;

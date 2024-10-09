@@ -11,7 +11,6 @@ export async function checkLanguage(
 
   if (currentLang !== contentLang) {
     await i18next.changeLanguage(contentLang, () => {
-      console.log("lang updated to ", contentLang);
       next();
     });
 
