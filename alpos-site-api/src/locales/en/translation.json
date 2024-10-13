@@ -1,6 +1,8 @@
 {
+  "home_tab": "Home",
   "solutions_tab": "Solutions",
   "products_tab": "Products",
   "services_tab": "Services",
-  "contacts_tab": "Contacts"
+  "contacts_tab": "Contacts",
+  "products_page": "Products"
 }

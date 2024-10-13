@@ -1,6 +1,8 @@
 {
+  "home_tab": "Mājas lapa",
   "solutions_tab": "Risinājumi",
   "products_tab": "Produkti",
   "services_tab": "Pakalpojumi",
-  "contacts_tab": "Kontakti"
+  "contacts_tab": "Kontakti",
+  "products_page": "Produkti"
 }

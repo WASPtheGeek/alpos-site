@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import "../styles/global.css";
-import "@WASPtheGeek/base-components/dist/style.scss";
 import { roboto } from "@/styles/fonts";
 import { Container } from "@WASPtheGeek/base-components";
+import { Providers } from "@/components/providers";
+import { AppNav } from "@/components/nav";
+
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@WASPtheGeek/base-components/dist/style.scss";
+import "../styles/app.scss";
+import "../styles/global.css";
 
 export const metadata: Metadata = {
   title: "Alpos",
@@ -16,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.variable}`}>
-        {/* <Providers>
-          <AppNav /> */}
-        <Container>{children}</Container>
-        {/* </Providers> */}
+        <Providers>
+          <AppNav />
+          <Container>{children}</Container>
+        </Providers>
       </body>
     </html>
   );

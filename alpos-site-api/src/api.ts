@@ -53,7 +53,10 @@ app.use((req, res, next) => {
     process.env.ACCESS_CONTROL_ALLOW_ORIGIN!
   );
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Headers", [
+    "Content-Type",
+    "Accept-Language",
+  ]);
   res.setHeader("Access-Control-Allow-Credentials", "true");
   next();
 });
