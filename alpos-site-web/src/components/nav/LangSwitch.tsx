@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import { AppLocale, useLocalization } from "../../contexts/localization";
 import { cn } from "@WASPtheGeek/base-components";
+import { AppLocale, useLocalization } from "../../contexts/localization";
 
 export default function LangSwitch() {
   const { locale, setLocale } = useLocalization();
@@ -14,16 +13,20 @@ export default function LangSwitch() {
       hidden: loc === locale,
     });
 
+  const handleClick = (loc: AppLocale) => {
+    setLocale(loc);
+  };
+
   // todo: add dropdown
   return (
     <div className="flex gap-2">
-      <button className={clsn("lv")} onClick={() => setLocale("lv")}>
+      <button className={clsn("lv")} onClick={() => handleClick("lv")}>
         lv
       </button>
-      <button className={clsn("en")} onClick={() => setLocale("en")}>
+      <button className={clsn("en")} onClick={() => handleClick("en")}>
         en
       </button>
-      <button className={clsn("ru")} onClick={() => setLocale("ru")}>
+      <button className={clsn("ru")} onClick={() => handleClick("ru")}>
         ru
       </button>
       <br />

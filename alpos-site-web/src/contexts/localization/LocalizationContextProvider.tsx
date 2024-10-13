@@ -1,11 +1,11 @@
 "use client";
 
+import { api } from "@/api/axios";
+import { useLocalStorage } from "@WASPtheGeek/base-components";
 import React from "react";
 import { LocalizationContext } from ".";
 import { AppConstants } from "../../constants/appConstants";
 import { AppLocale, LocalizationContextType, TranslationRecord } from "./types";
-import { useLocalStorage } from "@WASPtheGeek/base-components";
-import { api } from "@/api/axios";
 
 interface IProps {
   children?: React.ReactNode;
@@ -36,7 +36,7 @@ function LocalizationContextProvider(props: Readonly<IProps>) {
       .then((res) => res.data)
       .then(updateTranslations)
       .catch((err) => console.error(err)); // todo: handle error
-  }, [api, updateTranslations]);
+  }, [updateTranslations]);
 
   React.useEffect(() => {
     // load translations on the first load
@@ -47,12 +47,14 @@ function LocalizationContextProvider(props: Readonly<IProps>) {
     (data?: AppLocale) => {
       if ((data === ctxLocale) === locale) return;
 
+      window.location.reload();
+
       setLocale(data);
       setCtxLocale(data);
 
       refreshTranslations();
     },
-    [setLocale]
+    [setLocale, ctxLocale, locale, refreshTranslations]
   );
 
   const ctxValues: LocalizationContextType = React.useMemo(() => {
