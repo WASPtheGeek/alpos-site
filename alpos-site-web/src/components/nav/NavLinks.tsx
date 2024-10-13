@@ -27,7 +27,7 @@ export default function AppNavLinks() {
 
   return (
     <NavLinks isMobile={isMobile}>
-      <NavLink keepVisible href={"/"} className="logo-link py-0">
+      <NavLink keepVisible noStyle href={"/"} className="logo-link px-2">
         <LogoLink />
       </NavLink>
       <NavLink href={"/solutions"}>{getT("solutions_tab", t)}</NavLink>
