@@ -23,8 +23,8 @@ export default function PageTitle(props: IProps) {
   if (!mounted) return null;
 
   return (
-    <div>
-      <h2>{title}</h2>
+    <div className="pb-6">
+      <h1>{title}</h1>
     </div>
   );
 }

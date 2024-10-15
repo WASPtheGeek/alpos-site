@@ -22,7 +22,8 @@
       "@/styles/*": ["./src/styles/*"],
       "@/constants/*": ["./src/constants/*"],
       "@/api/*": ["./src/api/*"],
-      "@/utils/*": ["./src/utils/*"]
+      "@/utils/*": ["./src/utils/*"],
+      "@/contexts/*": ["./src/contexts/*"]
     }
   },
   "include": [

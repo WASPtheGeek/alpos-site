@@ -4,5 +4,12 @@
   "products_tab": "Products",
   "services_tab": "Services",
   "contacts_tab": "Contacts",
-  "products_page": "Products"
+  "admin_tab": "Admin",
+  "products_page": "Products",
+  "categories_page": "Categories",
+  "posts_page": "Posts",
+  "texts_page": "Texts",
+  "servises_page": "Services",
+  "contacts_page": "Contacts",
+  "admin_page": "Control panel"
 }

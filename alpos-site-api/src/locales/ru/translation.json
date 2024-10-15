@@ -4,5 +4,12 @@
   "products_tab": "Продукты",
   "services_tab": "Услуги",
   "contacts_tab": "Контакты",
-  "products_page": "Продукты"
+  "admin_tab": "Панель",
+  "products_page": "Продукты",
+  "category_page": "Категории",
+  "posts_page": "Новости на главной",
+  "texts_page": "Тексты - цены",
+  "servises_page": "Услуги",
+  "contacts_page": "Контакты",
+  "admin_page": "Панель управления"
 }

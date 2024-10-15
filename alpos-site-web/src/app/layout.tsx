@@ -23,6 +23,7 @@ export default function RootLayout({
       <body className={`${roboto.variable}`}>
         <Providers>
           <AppNav />
+          {/* TODO: set containerL */}
           <Container>{children}</Container>
         </Providers>
       </body>

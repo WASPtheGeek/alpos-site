@@ -1,7 +1,7 @@
 import AppNav from "./Nav";
 import NavLinks from "./NavLinks";
-import AdminNavLinks from "./AdminNavLinks";
 import LogoLink from "./LogoLink";
 import LangSwitch from "./LangSwitch";
+import UserLink from "./UserLink";
 
-export { AppNav, NavLinks, AdminNavLinks, LogoLink, LangSwitch };
+export { AppNav, NavLinks, UserLink, LogoLink, LangSwitch };

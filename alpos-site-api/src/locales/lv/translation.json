@@ -4,5 +4,12 @@
   "products_tab": "Produkti",
   "services_tab": "Pakalpojumi",
   "contacts_tab": "Kontakti",
-  "products_page": "Produkti"
+  "admin_tab": "Panelis",
+  "products_page": "Produkti",
+  "categories_page": "Kategorijas",
+  "posts_page": "Ziņas",
+  "texts_page": "Ieraksti",
+  "servises_page": "Pakalpojumi",
+  "contacts_page": "Kontakti",
+  "admin_page": "Vadības panelis"
 }
