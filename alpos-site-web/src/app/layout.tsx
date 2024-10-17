@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
-import { roboto } from "@/styles/fonts";
-import { Container } from "@WASPtheGeek/base-components";
-import { Providers } from "@/components/providers";
 import { AppNav } from "@/components/nav";
+import { Providers } from "@/components/providers";
+import { roboto } from "@/styles/fonts";
+import type { Metadata } from "next";
 
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@WASPtheGeek/base-components/dist/style.scss";
@@ -22,9 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable}`}>
         <Providers>
-          <AppNav />
-          {/* TODO: set containerL */}
-          <Container>{children}</Container>
+          <div className="flex flex-col h-full">
+            <AppNav />
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

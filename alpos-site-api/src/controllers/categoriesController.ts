@@ -26,9 +26,7 @@ export async function getCategories(req: Request, res: Response) {
         break;
     }
 
-    const categories = await prisma.category.findMany({
-      orderBy,
-    });
+    const categories = await prisma.category.findMany();
 
     const mappedItems: CategoryViewModel[] =
       categories?.map(
@@ -196,11 +194,7 @@ export async function getFullCategory(req: Request, res: Response) {
 // Gets all Categories - full
 export async function getFullCategories(req: Request, res: Response) {
   try {
-    const categories = await prisma.category.findMany({
-      orderBy: {
-        createdAt: "desc",
-      },
-    });
+    const categories = await prisma.category.findMany();
 
     res.json(categories);
   } catch (error) {

@@ -34,7 +34,7 @@ categoryRouter.get("/:id", checkLanguage, getCategory);
 categoryRouter.get("/full/:id", verifyToken, getFullCategory);
 
 // Gets all Categories - full
-categoryRouter.get("/", verifyToken, getFullCategories);
+categoryRouter.get("/list/full", verifyToken, getFullCategories);
 
 // Creates a new Category
 categoryRouter.post(
