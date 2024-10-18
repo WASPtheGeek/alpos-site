@@ -7,6 +7,7 @@ import { Access } from "@/contexts/permission";
 import { Grid } from "@WASPtheGeek/base-components";
 import { Prisma } from "@/api/generated/client";
 import { columnConfig } from "./config";
+import TableAction from "./TableAction";
 import React from "react";
 
 export default function AdminCatTable() {
@@ -25,7 +26,11 @@ export default function AdminCatTable() {
 
   return (
     <Restricted access={Access.all} scope={AppScope.adminC}>
-      <Grid columnConfigs={columnConfig} data={data} />
+      <Grid
+        columnConfigs={columnConfig}
+        data={data}
+        actionsTemplate={(d) => <TableAction id={d.id} />}
+      />
     </Restricted>
   );
 }

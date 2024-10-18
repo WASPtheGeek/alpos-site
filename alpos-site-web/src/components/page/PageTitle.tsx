@@ -7,10 +7,11 @@ import { getT } from "../../utils";
 interface IProps {
   className?: string;
   k: string;
+  actions?: React.ReactNode;
 }
 
 export default function PageTitle(props: IProps) {
-  const { k } = props;
+  const { k, actions } = props;
   const { t } = useLocalization();
   const [mounted, setMounted] = React.useState(false);
 
@@ -23,8 +24,9 @@ export default function PageTitle(props: IProps) {
   if (!mounted) return null;
 
   return (
-    <div className="pb-6">
+    <div className="pb-6 flex">
       <h1>{title}</h1>
+      {actions && <div className="ml-auto">{actions}</div>}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Prisma } from "../../../api/generated/client";
 
 export const columnConfig: GridColumnConfig<Prisma.CategoryCreateInput>[] = [
   {
+    // todo: localize fields
     field: "name_en",
     title: "Name EN",
   },
@@ -27,6 +28,7 @@ export const columnConfig: GridColumnConfig<Prisma.CategoryCreateInput>[] = [
     title: "Description RU",
   },
   {
+    // todo: boolean field
     // field: "isActive",
     // title: "Is Active",
     // type: "",

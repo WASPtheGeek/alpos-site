@@ -8,6 +8,7 @@ import React from "react";
 export default function AdminCategories() {
   return (
     <Restricted access={Access.all} scope={AppScope.adminC}>
+      {/* todo: add button */}
       <PageTitle k="categories_page" />
       <AdminCatTable />
     </Restricted>
