@@ -1,15 +1,23 @@
 "use client";
+
 import { Restricted } from "@/components/permission";
 import { AppScope } from "@/constants/appAbilities";
 import { Access } from "@/contexts/permission";
 import { api } from "@/api/axios";
 import { Prisma } from "@/api/generated/client";
 import React from "react";
+import { PageTitle } from "@/components/page";
+import CategoryForm from "./CategoryForm";
 
 export default function Page({ params }: { params: { id: string } }) {
   const [data, setData] = React.useState<Prisma.CategoryCreateInput | null>(
     null
   );
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   React.useEffect(() => {
     if (data) return;
@@ -20,10 +28,13 @@ export default function Page({ params }: { params: { id: string } }) {
       .then(setData);
   }, [data, params.id]);
 
+  if (!mounted) return null;
+
   return (
     <Restricted access={Access.all} scope={AppScope.adminC}>
+      <PageTitle k="categories_page" backLink="/admin/categories" />
       {/* todo */}
-      Category: {params.id} {data?.name_en}
+      <CategoryForm id={params.id} />
     </Restricted>
   );
 }

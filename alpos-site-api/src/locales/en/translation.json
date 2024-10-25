@@ -5,11 +5,18 @@
   "services_tab": "Services",
   "contacts_tab": "Contacts",
   "admin_tab": "Admin",
+
   "products_page": "Products",
   "categories_page": "Categories",
   "posts_page": "Posts",
   "texts_page": "Texts",
   "servises_page": "Services",
   "contacts_page": "Contacts",
-  "admin_page": "Control panel"
+  "admin_page": "Control panel",
+
+  "back": "Back",
+
+  "cat_name_en": "Name EN",
+  "cat_name_lv": "Name LV",
+  "cat_name_ru": "Name RU"
 }

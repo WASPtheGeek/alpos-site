@@ -3,15 +3,17 @@
 import React from "react";
 import { useLocalization } from "../../contexts/localization";
 import { getT } from "../../utils";
+import { BackBtn } from "@/components/buttons";
 
 interface IProps {
   className?: string;
   k: string;
   actions?: React.ReactNode;
+  backLink?: string;
 }
 
 export default function PageTitle(props: IProps) {
-  const { k, actions } = props;
+  const { k, actions, backLink } = props;
   const { t } = useLocalization();
   const [mounted, setMounted] = React.useState(false);
 
@@ -24,9 +26,12 @@ export default function PageTitle(props: IProps) {
   if (!mounted) return null;
 
   return (
-    <div className="pb-6 flex">
-      <h1>{title}</h1>
-      {actions && <div className="ml-auto">{actions}</div>}
+    <div className="pb-6">
+      {backLink && <BackBtn link={backLink} className="mb-4 text-amber-500" />}
+      <div className="flex">
+        <h1>{title}</h1>
+        {actions && <div className="ml-auto">{actions}</div>}
+      </div>
     </div>
   );
 }

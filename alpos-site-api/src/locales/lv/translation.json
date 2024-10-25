@@ -5,11 +5,18 @@
   "services_tab": "Pakalpojumi",
   "contacts_tab": "Kontakti",
   "admin_tab": "Panelis",
+
   "products_page": "Produkti",
   "categories_page": "Kategorijas",
   "posts_page": "Ziņas",
   "texts_page": "Ieraksti",
   "servises_page": "Pakalpojumi",
   "contacts_page": "Kontakti",
-  "admin_page": "Vadības panelis"
+  "admin_page": "Vadības panelis",
+
+  "back": "Atpakaļ",
+
+  "cat_name_en": "Nosaukums EN",
+  "cat_name_lv": "Nosaukums LV",
+  "cat_name_ru": "Nosaukums RU"
 }

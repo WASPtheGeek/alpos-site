@@ -5,11 +5,18 @@
   "services_tab": "Услуги",
   "contacts_tab": "Контакты",
   "admin_tab": "Панель",
+
   "products_page": "Продукты",
   "categories_page": "Категории",
   "posts_page": "Новости на главной",
   "texts_page": "Тексты - цены",
   "servises_page": "Услуги",
   "contacts_page": "Контакты",
-  "admin_page": "Панель управления"
+  "admin_page": "Панель управления",
+
+  "back": "Назад",
+
+  "cat_name_en": "Название EN",
+  "cat_name_lv": "Название LV",
+  "cat_name_ru": "Название RU"
 }
