@@ -23,7 +23,9 @@
       "@/constants/*": ["./src/constants/*"],
       "@/api/*": ["./src/api/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@/contexts/*": ["./src/contexts/*"]
+      "@/lib/*": ["./src/lib/*"],
+      "@/contexts/*": ["./src/contexts/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": [

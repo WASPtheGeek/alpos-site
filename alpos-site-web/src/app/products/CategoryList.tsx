@@ -3,6 +3,7 @@
 import { api } from "@/api/axios";
 import React from "react";
 import { CategoryViewModel } from "@/api/generated/models";
+import Image from "next/image";
 
 export default function CategoryList() {
   const [data, setData] = React.useState<CategoryViewModel[] | null>(null);
@@ -58,6 +59,14 @@ export default function CategoryList() {
         <div key={c.id}>
           <h4>{c.name}</h4>
           <p>{c.description}</p>
+          {c?.imagePath && (
+            <Image
+              src={c.imagePath}
+              height="400"
+              width="400"
+              alt="Category Image"
+            />
+          )}
         </div>
       ))}
     </div>

@@ -35,6 +35,8 @@ export default function Page({ params }: { params: { id: string } }) {
       <PageTitle k="categories_page" backLink="/admin/categories" />
       {/* todo */}
       <CategoryForm id={params.id} />
+
+      {/* todo: products list short */}
     </Restricted>
   );
 }

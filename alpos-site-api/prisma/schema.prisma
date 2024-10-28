@@ -85,7 +85,7 @@ model Category {
   name_ru String?
   description_ru String?
 
-  imagePath String
+  imagePath String?
 
   products Product[]
 
@@ -115,8 +115,8 @@ model Product {
   price Decimal
   priceExcludingVAT Decimal
 
-  imagePath String
-  filePath String
+  imagePath String?
+  filePath String?
 
   categoryId String?
   category Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
