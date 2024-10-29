@@ -8,6 +8,8 @@
 
   "products_page": "Products",
   "categories_page": "Categories",
+  "category_page": "Category",
+  "categories_page_new": "Create a new category",
   "posts_page": "Posts",
   "texts_page": "Texts",
   "servises_page": "Services",
@@ -15,8 +17,19 @@
   "admin_page": "Control panel",
 
   "back": "Back",
+  "submit": "Submit",
+  "image": "Image",
+  "create": "Create new",
+  "update": "Update",
+  "select_image": "Select an image",
 
   "cat_name_en": "Name EN",
   "cat_name_lv": "Name LV",
-  "cat_name_ru": "Name RU"
+  "cat_name_ru": "Name RU",
+  "cat_description_en": "Description EN",
+  "cat_description_lv": "Description LV",
+  "cat_description_ru": "Description RU",
+  "cat_is_active": "Is category active",
+  "cat_updated_at": "Last updated",
+  "cat_created_at": "Date created"
 }

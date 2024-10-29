@@ -7,7 +7,7 @@ export default function TableAction({ id }: { id?: string }) {
 
   return (
     <div className="flex justify-center">
-      <Link href={`/admin/categories/${id}`}>
+      <Link href={`/admin/categories/item/${id}`}>
         <Icon className="fas fa-up-right-from-square text-amber-600" />
       </Link>
     </div>

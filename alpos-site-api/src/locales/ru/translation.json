@@ -8,6 +8,8 @@
 
   "products_page": "Продукты",
   "categories_page": "Категории",
+  "category_page": "Категория",
+  "categories_page_new": "Создать новую категорию",
   "posts_page": "Новости на главной",
   "texts_page": "Тексты - цены",
   "servises_page": "Услуги",
@@ -15,8 +17,19 @@
   "admin_page": "Панель управления",
 
   "back": "Назад",
+  "submit": "Отправить",
+  "create": "Создать новое",
+  "update": "Обновить",
+  "select_image": "Выбрать изображение",
+  "image": "Изображение",
 
   "cat_name_en": "Название EN",
   "cat_name_lv": "Название LV",
-  "cat_name_ru": "Название RU"
+  "cat_name_ru": "Название RU",
+  "cat_description_en": "Описание EN",
+  "cat_description_lv": "Описание LV",
+  "cat_description_ru": "Описание RU",
+  "cat_is_active": "Активна ли категория",
+  "cat_updated_at": "Последнее обновление",
+  "cat_created_at": "Дата создания"
 }

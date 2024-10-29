@@ -5,6 +5,7 @@ import React from "react";
 import { api } from "../../api";
 import { AuthContext } from "@/contexts/auth";
 import { useRouter } from "next/navigation";
+import { Button } from "@WASPtheGeek/base-components";
 
 export default function LoginForm() {
   const [user, setInputUser] = React.useState({
@@ -67,13 +68,13 @@ export default function LoginForm() {
           placeholder="Enter Password"
         />
         {error && <div>{error}</div>}
-        <button
+        <Button
           disabled={submitting}
           type="submit"
           className="p-2 border rounded-lg hover:bg-slate-200 hover:text-black transition-colors duration-300 w-full"
         >
           Login
-        </button>
+        </Button>
       </form>
     </main>
   );

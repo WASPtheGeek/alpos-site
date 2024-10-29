@@ -8,6 +8,8 @@
 
   "products_page": "Produkti",
   "categories_page": "Kategorijas",
+  "category_page": "Kategorija",
+  "categories_page_new": "Izveidot jaunu kategoriju",
   "posts_page": "Ziņas",
   "texts_page": "Ieraksti",
   "servises_page": "Pakalpojumi",
@@ -15,8 +17,19 @@
   "admin_page": "Vadības panelis",
 
   "back": "Atpakaļ",
+  "submit": "Iesniegt",
+  "image": "Attēls",
+  "create": "Izveidot jaunu",
+  "update": "Atjaunināt",
+  "select_image": "Izvēlieties attēlu",
 
   "cat_name_en": "Nosaukums EN",
   "cat_name_lv": "Nosaukums LV",
-  "cat_name_ru": "Nosaukums RU"
+  "cat_name_ru": "Nosaukums RU",
+  "cat_description_en": "Apraksts LV",
+  "cat_description_lv": "Apraksts LV",
+  "cat_description_ru": "Apraksts RU",
+  "cat_is_active": "Vai kategorija ir aktīva",
+  "cat_updated_at": "Pēdējo reizi atjaunināts",
+  "cat_created_at": "Izveidošanas datums"
 }

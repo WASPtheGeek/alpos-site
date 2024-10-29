@@ -7,7 +7,7 @@ import { api } from "@/api/axios";
 import { Prisma } from "@/api/generated/client";
 import React from "react";
 import { PageTitle } from "@/components/page";
-import CategoryForm from "./CategoryForm";
+import { CategoryForm } from "@/components/category";
 
 export default function Page({ params }: { params: { id: string } }) {
   const [data, setData] = React.useState<Prisma.CategoryCreateInput | null>(
@@ -32,8 +32,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   return (
     <Restricted access={Access.all} scope={AppScope.adminC}>
-      <PageTitle k="categories_page" backLink="/admin/categories" />
-      {/* todo */}
+      <PageTitle k="category_page" backLink="/admin/categories" />
       <CategoryForm id={params.id} />
 
       {/* todo: products list short */}
