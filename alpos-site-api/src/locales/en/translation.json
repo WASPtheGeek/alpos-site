@@ -6,6 +6,8 @@
   "contacts_tab": "Contacts",
   "admin_tab": "Admin",
 
+  "required_field": "This field is required",
+
   "products_page": "Products",
   "categories_page": "Categories",
   "category_page": "Category",

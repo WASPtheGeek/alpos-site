@@ -9,24 +9,11 @@ export async function getCategories(req: Request, res: Response) {
   try {
     const currentLang = i18next.language;
 
-    let orderBy = {};
-
-    switch (currentLang) {
-      case "en":
-        orderBy = { name_en: "desc" };
-        break;
-
-      case "ru":
-        orderBy = { name_ru: "desc" };
-        break;
-
-      case "lv":
-      default:
-        orderBy = { name_lv: "desc" };
-        break;
-    }
-
-    const categories = await prisma.category.findMany();
+    const categories = await prisma.category.findMany({
+      where: {
+        isActive: true,
+      },
+    });
 
     const mappedItems: CategoryViewModel[] =
       categories?.map(
@@ -194,7 +181,11 @@ export async function getFullCategory(req: Request, res: Response) {
 // Gets all Categories - full
 export async function getFullCategories(req: Request, res: Response) {
   try {
-    const categories = await prisma.category.findMany();
+    const categories = await prisma.category.findMany({
+      orderBy: {
+        updatedAt: "desc",
+      },
+    });
 
     res.json(categories);
   } catch (error) {

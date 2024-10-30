@@ -6,6 +6,8 @@
   "contacts_tab": "Контакты",
   "admin_tab": "Панель",
 
+  "required_field": "Это поле обязательно к заполнению",
+
   "products_page": "Продукты",
   "categories_page": "Категории",
   "category_page": "Категория",
@@ -18,7 +20,7 @@
 
   "back": "Назад",
   "submit": "Отправить",
-  "create": "Создать новое",
+  "create": "Создать",
   "update": "Обновить",
   "select_image": "Выбрать изображение",
   "image": "Изображение",

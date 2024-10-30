@@ -12,6 +12,10 @@ export const columnConfig: GridColumnConfig<Prisma.CategoryCreateInput>[] = [
     title: "Name LV",
   },
   {
+    field: "isActive",
+    title: "Is active",
+  },
+  {
     field: "name_ru",
     title: "Name RU",
   },

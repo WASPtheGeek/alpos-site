@@ -8,6 +8,9 @@ import { Prisma } from "../../api/generated/client";
 import FormContent from "./FormContent";
 import { handleAxiosError } from "@/utils/errorUtils";
 import { useRouter } from "next/navigation";
+import { categoryUpdateValidationSchema } from "./validation";
+import { useLocalization } from "@/contexts/localization";
+import { getT } from "@/utils/localizationUtils";
 
 interface IProps {
   id?: string;
@@ -22,6 +25,7 @@ export default function CategoryForm(props: IProps) {
   const [submitting, setSubmitting] = React.useState<boolean>(false);
   const [refresh, setRefresh] = React.useState<boolean>(false);
   const router = useRouter();
+  const { t } = useLocalization();
 
   React.useEffect(() => {
     if (!loading) return;
@@ -91,7 +95,10 @@ export default function CategoryForm(props: IProps) {
     <Formik<Prisma.CategoryCreateInput>
       initialValues={category}
       onSubmit={onSubmit}
-      // validationSchema={} todo
+      validationSchema={categoryUpdateValidationSchema(
+        getT("required_field", t)
+      )}
+      validateOnChange={false}
     >
       {(bag) => <FormContent formik={bag} id={id} submitting={submitting} />}
     </Formik>
