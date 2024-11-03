@@ -11,8 +11,8 @@ import { getT } from "@/utils/localizationUtils";
 import React from "react";
 import { columnConfig } from "./config";
 
-export default function AdminCatTable() {
-  const [data, setData] = React.useState<Prisma.CategoryCreateInput[] | null>(
+export default function AdminProdTable() {
+  const [data, setData] = React.useState<Prisma.ProductCreateInput[] | null>(
     null
   );
   const { t } = useLocalization();
@@ -21,7 +21,7 @@ export default function AdminCatTable() {
     if (data) return;
 
     api
-      .get("/categories/list/full")
+      .get("/products")
       .then((res) => res.data)
       .then(setData);
   }, [data]);
@@ -33,8 +33,8 @@ export default function AdminCatTable() {
       <AppGrid
         columnConfigs={columnConfig(getTitle)}
         data={data}
-        actionsTemplate={(d: any) => (
-          <TableAction link={`/admin/categories/item/${d.id}`} />
+        actionsTemplate={(d) => (
+          <TableAction link={`/admin/products/item/${d.id}`} />
         )}
       />
     </Restricted>

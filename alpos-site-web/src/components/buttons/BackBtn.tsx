@@ -7,9 +7,11 @@ import { getT } from "@/utils/localizationUtils";
 export default function BackBtn({
   link,
   className,
+  localizationKey,
 }: {
   link: string;
   className?: string;
+  localizationKey?: string;
 }) {
   const clsn = cn("text-amber-500", "flex gap-2 items-center", className);
   const { t } = useLocalization();
@@ -17,7 +19,7 @@ export default function BackBtn({
   return (
     <Link href={link} className={clsn}>
       <Icon className="fas fa-arrow-left" />
-      <p>{getT("back", t)}</p>
+      <p>{getT(localizationKey ?? "back", t)}</p>
     </Link>
   );
 }

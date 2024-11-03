@@ -8,6 +8,7 @@
 
   "required_field": "Šis lauks ir obligāts",
 
+  "product_page": "Produkts",
   "products_page": "Produkti",
   "categories_page": "Kategorijas",
   "category_page": "Kategorija",
@@ -19,19 +20,46 @@
   "admin_page": "Vadības panelis",
 
   "back": "Atpakaļ",
+  "back_to_list": "Atpakaļ uz sarakstu",
   "submit": "Iesniegt",
   "image": "Attēls",
   "create": "Izveidot jaunu",
   "update": "Atjaunināt",
   "select_image": "Izvēlieties attēlu",
 
-  "cat_name_en": "Nosaukums EN",
-  "cat_name_lv": "Nosaukums LV",
-  "cat_name_ru": "Nosaukums RU",
-  "cat_description_en": "Apraksts LV",
-  "cat_description_lv": "Apraksts LV",
-  "cat_description_ru": "Apraksts RU",
   "cat_is_active": "Vai kategorija ir aktīva",
-  "cat_updated_at": "Pēdējo reizi atjaunināts",
-  "cat_created_at": "Izveidošanas datums"
+
+  "field_name_en": "Nosaukums EN",
+  "field_name_lv": "Nosaukums LV",
+  "field_name_ru": "Nosaukums RU",
+  "field_description_en": "Apraksts LV",
+  "field_description_lv": "Apraksts LV",
+  "field_description_ru": "Apraksts RU",
+  "field_updated_at": "Pēdējo reizi atjaunināts",
+  "field_created_at": "Izveidošanas datums",
+
+  "field_manufacturer": "Ražotājs",
+  "field_country": "Valsts",
+  "field_price": "Cena",
+  "field_priceExcludingVAT": "Cena bez PVN",
+
+  "prod_is_active": "Vai produkts ir aktīvs",
+
+  "table_false": "Nē",
+  "table_true": "Jā",
+  "table_actions": "Darbības",
+  "table_name_en": "Nosaukums EN",
+  "table_name_lv": "Nosaukums LV",
+  "table_name_ru": "Nosaukums RU",
+  "table_descr_en": "Apraksts LV",
+  "table_descr_lv": "Apraksts LV",
+  "table_descr_ru": "Apraksts RU",
+  "table_is_active": "Aktīvs",
+  "table_updated_at": "Atjaunināts",
+  "table_created_at": "Izveidots",
+
+  "table_manufacturer": "Ražotājs",
+  "table_country": "Valsts",
+  "table_price": "Cena",
+  "table_priceExcludingVAT": "Cena bez PVN"
 }

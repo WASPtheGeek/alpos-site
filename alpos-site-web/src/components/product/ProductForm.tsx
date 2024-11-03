@@ -1,25 +1,27 @@
 "use client";
 
 import { api } from "@/api/axios";
+import { useLocalization } from "@/contexts/localization";
+import { handleAxiosError } from "@/utils/errorUtils";
+import { getT } from "@/utils/localizationUtils";
 import { Spinner } from "@WASPtheGeek/base-components";
 import { Formik, FormikHelpers } from "formik";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Prisma } from "../../api/generated/client";
 import FormContent from "./FormContent";
-import { handleAxiosError } from "@/utils/errorUtils";
-import { useRouter } from "next/navigation";
-import { categoryUpdateValidationSchema } from "./validation";
-import { useLocalization } from "@/contexts/localization";
-import { getT } from "@/utils/localizationUtils";
+import { productUpdateValidationSchema } from "./validation";
 
 interface IProps {
   id?: string;
 }
 
-export default function CategoryForm(props: IProps) {
+export default function ProductForm(props: IProps) {
   const { id } = props;
-  const [category, setCategory] = React.useState<Prisma.CategoryCreateInput>({
+  const [product, setProduct] = React.useState<Prisma.ProductCreateInput>({
     isActive: false,
+    price: 0,
+    priceExcludingVAT: 0,
   });
   const [loading, setLoading] = React.useState<boolean>(true);
   const [submitting, setSubmitting] = React.useState<boolean>(false);
@@ -41,45 +43,51 @@ export default function CategoryForm(props: IProps) {
     }
 
     api
-      .get(`/categories/full/${id}`)
+      .get(`/products/full/${id}`)
       .then((res) => res.data)
-      .then(setCategory)
+      .then(setProduct)
       .finally(() => setLoading(false));
   }, [id, loading, refresh]);
 
-  const handleSave = (values: Prisma.CategoryCreateInput) => {
+  const handleSave = (
+    values: Prisma.ProductCreateInput,
+    helpers: FormikHelpers<Prisma.ProductCreateInput>
+  ) => {
     api
-      .post("/categories", values)
+      .post("/products", values)
       .then((res) => res.data)
-      .then((data) => router.replace(`/admin/categories/item/${data.id}`))
+      .then((data) => router.replace(`/admin/products/item/${data.id}`))
       .catch((err) => {
-        handleAxiosError(err);
+        handleAxiosError(err, helpers);
         setSubmitting(false);
       });
   };
 
   const handleUpdate = (
-    values: Prisma.CategoryCreateInput,
-    helpers: FormikHelpers<Prisma.CategoryCreateInput>
+    values: Prisma.ProductCreateInput,
+    helpers: FormikHelpers<Prisma.ProductCreateInput>
   ) => {
     if (!id) return;
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { categoryId, ...valuesToSend } = values as any;
+
     api
-      .put(`/categories/${id}`, values)
+      .put(`/products/${id}`, valuesToSend)
       .then((res) => res.data)
       .then(helpers.setValues)
-      .catch(handleAxiosError)
+      .catch((err) => handleAxiosError(err, helpers))
       .finally(() => setSubmitting(false));
   };
 
   const onSubmit = (
-    values: Prisma.CategoryCreateInput,
-    helpers: FormikHelpers<Prisma.CategoryCreateInput>
+    values: Prisma.ProductCreateInput,
+    helpers: FormikHelpers<Prisma.ProductCreateInput>
   ) => {
     setSubmitting(true);
 
     if (!id) {
-      handleSave(values);
+      handleSave(values, helpers);
 
       return;
     }
@@ -89,16 +97,17 @@ export default function CategoryForm(props: IProps) {
 
   if (loading) return <Spinner />;
   // todo: localize, create component
-  if (!category) return <div>Error occured</div>;
+  if (!product) return <div>Error occured</div>;
 
   return (
-    <Formik<Prisma.CategoryCreateInput>
-      initialValues={category}
+    <Formik<Prisma.ProductCreateInput>
+      initialValues={product}
       onSubmit={onSubmit}
-      validationSchema={categoryUpdateValidationSchema(
+      validationSchema={productUpdateValidationSchema(
         getT("required_field", t)
       )}
       validateOnChange={false}
+      validateOnBlur={false}
     >
       {(bag) => <FormContent formik={bag} id={id} submitting={submitting} />}
     </Formik>

@@ -3,8 +3,9 @@ import { Prisma } from "../../../api/generated/client";
 
 export const columnConfig = (
   t: (key: string) => string
-): GridColumnConfig<Prisma.CategoryCreateInput>[] => [
+): GridColumnConfig<Prisma.ProductCreateInput>[] => [
   {
+    // todo: localize fields
     field: "name_en",
     title: t("field_name_en"),
   },
@@ -32,6 +33,24 @@ export const columnConfig = (
   {
     field: "description_ru",
     title: t("table_descr_ru"),
+  },
+  {
+    field: "manufacturer",
+    title: t("table_manufacturer"),
+  },
+  {
+    field: "country",
+    title: t("table_country"),
+  },
+  {
+    field: "price",
+    title: t("table_price"),
+    type: "Number",
+  },
+  {
+    field: "priceExcludingVAT",
+    title: t("table_priceExcludingVAT"),
+    type: "Number",
   },
   {
     field: "updatedAt",

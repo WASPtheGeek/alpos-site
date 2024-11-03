@@ -8,6 +8,7 @@
 
   "required_field": "Это поле обязательно к заполнению",
 
+  "product_page": "Продукт",
   "products_page": "Продукты",
   "categories_page": "Категории",
   "category_page": "Категория",
@@ -19,19 +20,46 @@
   "admin_page": "Панель управления",
 
   "back": "Назад",
+  "back_to_list": "Вернуться к списку",
   "submit": "Отправить",
   "create": "Создать",
   "update": "Обновить",
   "select_image": "Выбрать изображение",
   "image": "Изображение",
 
-  "cat_name_en": "Название EN",
-  "cat_name_lv": "Название LV",
-  "cat_name_ru": "Название RU",
-  "cat_description_en": "Описание EN",
-  "cat_description_lv": "Описание LV",
-  "cat_description_ru": "Описание RU",
   "cat_is_active": "Активна ли категория",
-  "cat_updated_at": "Последнее обновление",
-  "cat_created_at": "Дата создания"
+
+  "field_name_en": "Название EN",
+  "field_name_lv": "Название LV",
+  "field_name_ru": "Название RU",
+  "field_description_en": "Описание EN",
+  "field_description_lv": "Описание LV",
+  "field_description_ru": "Описание RU",
+  "field_updated_at": "Последнее обновление",
+  "field_created_at": "Дата создания",
+
+  "field_manufacturer": "Производитель",
+  "field_country": "Страна",
+  "field_price": "Цена",
+  "field_priceExcludingVAT": "Цена без НДС",
+
+  "prod_is_active": "Активен ли продукт",
+
+  "table_false": "Нет",
+  "table_true": "Да",
+  "table_actions": "Действия",
+  "table_name_en": "Название EN",
+  "table_name_lv": "Название LV",
+  "table_name_ru": "Название RU",
+  "table_descr_en": "Описание EN",
+  "table_descr_lv": "Описание LV",
+  "table_descr_ru": "Описание RU",
+  "table_is_active": "Активно",
+  "table_updated_at": "Обновлено",
+  "table_created_at": "Создано",
+
+  "table_manufacturer": "Производитель",
+  "table_country": "Страна",
+  "table_price": "Цена",
+  "table_priceExcludingVAT": "Цена без НДС"
 }

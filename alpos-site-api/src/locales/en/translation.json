@@ -8,6 +8,7 @@
 
   "required_field": "This field is required",
 
+  "product_page": "Product",
   "products_page": "Products",
   "categories_page": "Categories",
   "category_page": "Category",
@@ -19,19 +20,46 @@
   "admin_page": "Control panel",
 
   "back": "Back",
+  "back_to_list": "Back to list",
   "submit": "Submit",
   "image": "Image",
   "create": "Create new",
   "update": "Update",
   "select_image": "Select an image",
 
-  "cat_name_en": "Name EN",
-  "cat_name_lv": "Name LV",
-  "cat_name_ru": "Name RU",
-  "cat_description_en": "Description EN",
-  "cat_description_lv": "Description LV",
-  "cat_description_ru": "Description RU",
   "cat_is_active": "Is category active",
-  "cat_updated_at": "Last updated",
-  "cat_created_at": "Date created"
+
+  "field_name_en": "Name EN",
+  "field_name_lv": "Name LV",
+  "field_name_ru": "Name RU",
+  "field_description_en": "Description EN",
+  "field_description_lv": "Description LV",
+  "field_description_ru": "Description RU",
+  "field_updated_at": "Last updated",
+  "field_created_at": "Date created",
+
+  "field_manufacturer": "Manufacturer",
+  "field_country": "Country",
+  "field_price": "Price",
+  "field_priceExcludingVAT": "Price excl. VAT",
+
+  "prod_is_active": "Is product active",
+
+  "table_false": "No",
+  "table_true": "Yes",
+  "table_actions": "Actions",
+  "table_name_en": "Name EN",
+  "table_name_lv": "Name LV",
+  "table_name_ru": "Name RU",
+  "table_descr_en": "Description EN",
+  "table_descr_lv": "Description LV",
+  "table_descr_ru": "Description RU",
+  "table_is_active": "Active",
+  "table_updated_at": "Updated",
+  "table_created_at": "Created",
+
+  "table_manufacturer": "Manufacturer",
+  "table_country": "Country",
+  "table_price": "EUR",
+  "table_priceExcludingVAT": "EUR excl. VAT"
 }

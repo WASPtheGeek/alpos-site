@@ -12,6 +12,7 @@ import {
   Spinner,
   TextInput,
   TextInputFormik,
+  NumberInputFormik,
 } from "@WASPtheGeek/base-components";
 import { FormikProps } from "formik";
 import { Prisma } from "../../api/generated/client";
@@ -19,7 +20,7 @@ import { Prisma } from "../../api/generated/client";
 interface IProps {
   className?: string;
   id?: string;
-  formik: FormikProps<Prisma.CategoryCreateInput>;
+  formik: FormikProps<Prisma.ProductCreateInput>;
   submitting?: boolean;
 }
 
@@ -79,8 +80,39 @@ export default function FormContent(props: IProps) {
           {...formik.getFieldProps("description_ru")}
           label={getT("field_description_ru", t)}
         />
+        <TextInputFormik
+          formikProps={formik}
+          bagField="manufacturer"
+          {...formik.getFieldProps("manufacturer")}
+          label={getT("field_manufacturer", t)}
+        />
+        <TextInputFormik
+          formikProps={formik}
+          bagField="country"
+          {...formik.getFieldProps("country")}
+          label={getT("field_country", t)}
+        />
+        {/* not working */}
+        <NumberInputFormik
+          formikProps={formik}
+          bagField="price"
+          value={formik.values?.price as number}
+          onChange={(v) => formik.setFieldValue("price", v)}
+          label={getT("field_price", t)}
+        />
+        <NumberInputFormik
+          formikProps={formik}
+          bagField="priceExcludingVAT"
+          value={formik.values?.priceExcludingVAT as number}
+          onChange={(v) => formik.setFieldValue("priceExcludingVAT", v)}
+          label={getT("field_priceExcludingVAT", t)}
+        />
       </div>
+      {/* todo */}
+      <div>Category</div>
+      <div>filePath</div>
       {/* todo: custom input */}
+      {/* todo: this isn't working */}
       <div className="flex items-center space-x-2 my-4">
         <Checkbox
           checked={formik.values?.isActive}
@@ -92,7 +124,7 @@ export default function FormContent(props: IProps) {
           htmlFor="terms2"
           className="font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          {getT("cat_is_active", t)}
+          {getT("prod_is_active", t)}
         </label>
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
