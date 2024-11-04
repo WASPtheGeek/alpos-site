@@ -27,6 +27,9 @@
   "update": "Update",
   "select_image": "Select an image",
 
+  "page_not_found": "Page not found",
+  "item_not_found": "Item not found",
+
   "cat_is_active": "Is category active",
 
   "field_name_en": "Name EN",

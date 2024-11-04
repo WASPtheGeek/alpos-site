@@ -11,6 +11,7 @@ import React from "react";
 import { Prisma } from "../../api/generated/client";
 import FormContent from "./FormContent";
 import { productUpdateValidationSchema } from "./validation";
+import { PageError } from "../error";
 
 interface IProps {
   id?: string;
@@ -53,6 +54,13 @@ export default function ProductForm(props: IProps) {
     values: Prisma.ProductCreateInput,
     helpers: FormikHelpers<Prisma.ProductCreateInput>
   ) => {
+    // todo
+
+    values.category = {
+      connect: {
+        id: "d054c010-770c-4a9f-9b74-1b498fe6228a",
+      },
+    };
     api
       .post("/products", values)
       .then((res) => res.data)
@@ -96,8 +104,8 @@ export default function ProductForm(props: IProps) {
   };
 
   if (loading) return <Spinner />;
-  // todo: localize, create component
-  if (!product) return <div>Error occured</div>;
+  if (!product)
+    return <PageError title={getT("item_not_found", t)} noFullHeight />;
 
   return (
     <Formik<Prisma.ProductCreateInput>

@@ -5,7 +5,6 @@ export const columnConfig = (
   t: (key: string) => string
 ): GridColumnConfig<Prisma.ProductCreateInput>[] => [
   {
-    // todo: localize fields
     field: "name_en",
     title: t("field_name_en"),
   },

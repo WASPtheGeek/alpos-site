@@ -110,9 +110,39 @@ export default function FormContent(props: IProps) {
       </div>
       {/* todo */}
       <div>Category</div>
-      <div>filePath</div>
+      {/* todo: move to file picker component */}
+      <div className="space-y-2">
+        <label htmlFor="file">File</label>
+        <input
+          type="file"
+          id="file"
+          name="file"
+          onChange={(e) => {
+            const files = e.target?.files;
+
+            if (!files || files.length > 1) return;
+
+            let preview: string = "";
+            const file = files[0];
+
+            const reader = new FileReader();
+            reader.onload = () => {
+              preview = reader.result as string;
+              // if (onChange) onChange(preview);
+              formik.setFieldValue("filePath", preview);
+            };
+
+            reader.readAsDataURL(file);
+          }}
+        />
+        {formik.values?.filePath != null && (
+          <div className="text-muted-foreground">{formik.values.filePath}</div>
+        )}
+        {formik.errors?.filePath && (
+          <div className="text-destructive">{formik.errors?.filePath}</div>
+        )}
+      </div>
       {/* todo: custom input */}
-      {/* todo: this isn't working */}
       <div className="flex items-center space-x-2 my-4">
         <Checkbox
           checked={formik.values?.isActive}

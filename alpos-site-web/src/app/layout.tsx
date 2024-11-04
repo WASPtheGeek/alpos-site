@@ -23,7 +23,7 @@ export default function RootLayout({
         <Providers>
           <div className="flex flex-col h-full">
             <AppNav />
-            {children}
+            <div className="h-full">{children}</div>
           </div>
         </Providers>
       </body>

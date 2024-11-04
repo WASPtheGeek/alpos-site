@@ -58,7 +58,6 @@ export async function updateContact(req: Request, res: Response) {
         phone,
         surname,
         position,
-        // todo: check if updatedAt updates
       },
     });
     res.json(contact);

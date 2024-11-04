@@ -42,6 +42,7 @@ export default function LoginForm() {
     setInputUser({ ...user, [name]: value });
   };
 
+  // TODO: use formik
   return (
     <main className="max-h-screen ">
       <form

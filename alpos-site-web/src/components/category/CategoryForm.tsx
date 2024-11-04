@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { categoryUpdateValidationSchema } from "./validation";
 import { useLocalization } from "@/contexts/localization";
 import { getT } from "@/utils/localizationUtils";
+import { PageError } from "@/components/error";
 
 interface IProps {
   id?: string;
@@ -88,8 +89,8 @@ export default function CategoryForm(props: IProps) {
   };
 
   if (loading) return <Spinner />;
-  // todo: localize, create component
-  if (!category) return <div>Error occured</div>;
+  if (!category)
+    return <PageError title={getT("item_not_found", t)} noFullHeight />;
 
   return (
     <Formik<Prisma.CategoryCreateInput>

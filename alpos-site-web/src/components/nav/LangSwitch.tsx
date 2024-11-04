@@ -1,35 +1,25 @@
 "use client";
 
-import { cn } from "@WASPtheGeek/base-components";
 import { AppLocale, useLocalization } from "../../contexts/localization";
+import { AppSelect } from "../select";
+import { SelectItemType } from "../select/AppSelect";
 
 export default function LangSwitch() {
   const { locale, setLocale } = useLocalization();
 
-  if (!setLocale) return <div>Loading...</div>;
+  if (!setLocale) return;
 
-  const clsn = (loc: AppLocale) =>
-    cn({
-      hidden: loc === locale,
-    });
+  const options: SelectItemType[] = [
+    { value: "lv", label: "Latviešu" },
+    { value: "en", label: "English" },
+    { value: "ru", label: "Русский" },
+  ];
 
-  const handleClick = (loc: AppLocale) => {
-    setLocale(loc);
+  const handleClick = (loc: string) => {
+    setLocale(loc as AppLocale);
   };
 
-  // todo: add dropdown
   return (
-    <div className="flex gap-2">
-      <button className={clsn("lv")} onClick={() => handleClick("lv")}>
-        lv
-      </button>
-      <button className={clsn("en")} onClick={() => handleClick("en")}>
-        en
-      </button>
-      <button className={clsn("ru")} onClick={() => handleClick("ru")}>
-        ru
-      </button>
-      <br />
-    </div>
+    <AppSelect value={locale} options={options} onValueChange={handleClick} />
   );
 }

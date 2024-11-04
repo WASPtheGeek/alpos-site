@@ -130,7 +130,6 @@ export async function updatePost(req: Request, res: Response) {
         content_lv,
         content_ru,
         isArchived,
-        // todo: check if updatedAt updates
       },
     });
     res.json(post);
@@ -170,7 +169,6 @@ export async function publishPost(req: Request, res: Response) {
       },
       data: {
         isArchived: false,
-        //   updatedAt: new Date(), todo
       },
     });
     res.json(posts);
@@ -190,7 +188,6 @@ export async function archivePost(req: Request, res: Response) {
       },
       data: {
         isArchived: true,
-        //   updatedAt: new Date(), todo
       },
     });
     res.json(posts);

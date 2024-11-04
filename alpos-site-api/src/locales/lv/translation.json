@@ -27,6 +27,9 @@
   "update": "Atjaunināt",
   "select_image": "Izvēlieties attēlu",
 
+  "page_not_found": "Lapa nav atrasta",
+  "item_not_found": "Ieraksts nav atrasts",
+
   "cat_is_active": "Vai kategorija ir aktīva",
 
   "field_name_en": "Nosaukums EN",
