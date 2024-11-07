@@ -64,5 +64,14 @@
   "table_manufacturer": "Manufacturer",
   "table_country": "Country",
   "table_price": "EUR",
-  "table_priceExcludingVAT": "EUR excl. VAT"
+  "table_priceExcludingVAT": "EUR excl. VAT",
+
+  "posts_page": "",
+  "field_title_en": "",
+  "field_title_lv": "",
+  "field_title_ru": "",
+  "table_descr_en": "",
+  "table_descr_lv": "",
+  "table_descr_ru": "",
+  "table_is_archived": ""
 }

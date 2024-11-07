@@ -127,7 +127,7 @@ export async function getCategory(req: Request, res: Response) {
     if (!c) {
       res
         .status(StatusCodes.NOT_FOUND)
-        .json({ message: "Such product is not found" });
+        .json({ message: "Such category is not found" });
 
       return;
     }

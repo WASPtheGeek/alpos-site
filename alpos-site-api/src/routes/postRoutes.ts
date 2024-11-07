@@ -9,6 +9,8 @@ import {
   deletePost,
   getActivePosts,
   getArchivedPosts,
+  getFullPost,
+  getLocalizedPost,
   getPosts,
   publishPost,
   updatePost,
@@ -22,7 +24,13 @@ const postRouter = express.Router();
 // Gets published posts
 postRouter.get("/active", getActivePosts);
 
+// Gets the localized post by id
+postRouter.get("/:id", getLocalizedPost);
+
 /** Requires auth */
+
+// Gets the full post by id
+postRouter.get("/full/:id", getFullPost);
 
 // Gets archived posts
 postRouter.get("/archived", verifyToken, getArchivedPosts);

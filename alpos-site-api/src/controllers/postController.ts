@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import prisma from "../client";
 import { StatusCodes } from "http-status-codes";
+import { PostViewModel } from "../models";
+import i18next from "i18next";
 
 // Gets all the Posts
 export async function getPosts(req: Request, res: Response) {
@@ -32,6 +34,69 @@ export async function getActivePosts(req: Request, res: Response) {
     });
 
     res.json(posts);
+  } catch (error) {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.message });
+  }
+}
+
+// Gets localized post by id
+export async function getLocalizedPost(req: Request, res: Response) {
+  try {
+    const { id } = req.params;
+    const p = await prisma.post.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    if (!p) {
+      res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: "Such post is not found" });
+
+      return;
+    }
+
+    const currentLang = i18next.language;
+    const mappedItem: PostViewModel = {
+      id: p.id,
+      views: p.views,
+      createdAt: p.createdAt,
+      updatedAt: p.updatedAt,
+      title:
+        currentLang === "en"
+          ? p.title_en
+          : currentLang === "ru"
+          ? p.title_ru
+          : p.title_lv,
+      description:
+        currentLang === "en"
+          ? p.description_en
+          : currentLang === "ru"
+          ? p.description_ru
+          : p.description_lv,
+    } as PostViewModel;
+    res.json(mappedItem);
+  } catch (error) {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.message });
+  }
+}
+
+// Gets the full Post by id
+export async function getFullPost(req: Request, res: Response) {
+  try {
+    const { id } = req.params;
+    const p = await prisma.post.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    res.json(p);
   } catch (error) {
     res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
