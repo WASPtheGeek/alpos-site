@@ -10,7 +10,7 @@ export default function AdminLayout(props: IProps) {
   const { children } = props;
 
   return (
-    <div className="text-xl flex h-full overflow-auto">
+    <div className="text-xl flex h-full">
       <VerticalAdminNav />
       <ContainerL className="w-4/5 h-full overflow-auto">{children}</ContainerL>
     </div>

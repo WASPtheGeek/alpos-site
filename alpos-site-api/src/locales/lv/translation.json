@@ -64,5 +64,22 @@
   "table_manufacturer": "Ražotājs",
   "table_country": "Valsts",
   "table_price": "Cena",
-  "table_priceExcludingVAT": "Cena bez PVN"
+  "table_priceExcludingVAT": "Cena bez PVN",
+
+  "post_page": "Ziņa",
+  "field_title_en": "Nosaukums EN",
+  "field_title_lv": "Nosaukums LV",
+  "field_title_ru": "Nosaukums RU",
+  "table_title_en": "Nosaukums EN",
+  "table_title_lv": "Nosaukums LV",
+  "table_title_ru": "Nosaukums RU",
+  "table_is_archived": "Arhivēts",
+  "posts_page_new": "Jauna ziņa",
+  "post_is_archived": "Ziņa ir arhivēta",
+  "field_content_en": "Saturs EN",
+  "field_content_lv": "Saturs LV",
+  "field_content_ru": "Saturs RU",
+  "table_content_en": "Saturs EN",
+  "table_content_lv": "Saturs LV",
+  "table_content_ru": "Saturs RU"
 }

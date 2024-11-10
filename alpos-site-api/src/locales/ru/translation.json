@@ -64,5 +64,22 @@
   "table_manufacturer": "Производитель",
   "table_country": "Страна",
   "table_price": "Цена",
-  "table_priceExcludingVAT": "Цена без НДС"
+  "table_priceExcludingVAT": "Цена без НДС",
+
+  "post_page": "Пост",
+  "field_title_en": "Заголовок EN",
+  "field_title_lv": "Заголовок LV",
+  "field_title_ru": "Заголовок RU",
+  "table_title_en": "Заголовок EN",
+  "table_title_lv": "Заголовок LV",
+  "table_title_ru": "Заголовок RU",
+  "table_is_archived": "Архивировано",
+  "posts_page_new": "Новый пост",
+  "post_is_archived": "Архивирован ли пост",
+  "field_content_en": "Контент EN",
+  "field_content_lv": "Контент LV",
+  "field_content_ru": "Контент RU",
+  "table_content_en": "Контент EN",
+  "table_content_lv": "Контент LV",
+  "table_content_ru": "Контент RU"
 }

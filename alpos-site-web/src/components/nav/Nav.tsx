@@ -4,7 +4,7 @@ import { NavLinks } from ".";
 
 export default async function AppNav() {
   return (
-    <Nav>
+    <Nav className="app-nav">
       <NavLinks />
     </Nav>
   );

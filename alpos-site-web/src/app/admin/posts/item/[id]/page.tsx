@@ -7,6 +7,7 @@ import { Restricted } from "@/components/permission";
 import { AppScope } from "@/constants/appAbilities";
 import { Access } from "@/contexts/permission";
 import React from "react";
+import { PostForm } from "@/components/post";
 
 export default function Page({ params }: { params: { id: string } }) {
   const [data, setData] = React.useState<Prisma.PostCreateInput | null>(null);
@@ -30,8 +31,7 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <Restricted access={Access.all} scope={AppScope.adminC}>
       <PageTitle k="post_page" backLink="/admin/posts" />
-      {/* todo */}
-      {/* <CategoryForm id={params.id} /> */}
+      <PostForm id={params.id} />
     </Restricted>
   );
 }

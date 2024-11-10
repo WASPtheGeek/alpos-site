@@ -23,7 +23,7 @@ export default function RootLayout({
         <Providers>
           <div className="flex flex-col h-full">
             <AppNav />
-            <div className="h-full">{children}</div>
+            <div className="overflow-hidden h-full">{children}</div>
           </div>
         </Providers>
       </body>

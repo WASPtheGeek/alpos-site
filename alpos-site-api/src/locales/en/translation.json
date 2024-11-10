@@ -66,12 +66,20 @@
   "table_price": "EUR",
   "table_priceExcludingVAT": "EUR excl. VAT",
 
-  "posts_page": "",
-  "field_title_en": "",
-  "field_title_lv": "",
-  "field_title_ru": "",
-  "table_descr_en": "",
-  "table_descr_lv": "",
-  "table_descr_ru": "",
-  "table_is_archived": ""
+  "post_page": "Post",
+  "field_title_en": "Title EN",
+  "field_title_lv": "Title LV",
+  "field_title_ru": "Title RU",
+  "table_title_en": "Title EN",
+  "table_title_lv": "Title LV",
+  "table_title_ru": "Title RU",
+  "table_is_archived": "Archived",
+  "posts_page_new": "New post",
+  "post_is_archived": "Is post archived",
+  "field_content_en": "Content EN",
+  "field_content_lv": "Content LV",
+  "field_content_ru": "Content RU",
+  "table_content_en": "Content EN",
+  "table_content_lv": "Content LV",
+  "table_content_ru": "Content RU"
 }
