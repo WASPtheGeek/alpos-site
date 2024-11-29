@@ -104,7 +104,7 @@ export default function ProductForm(props: IProps) {
   };
 
   if (loading) return <Spinner />;
-  if (!product)
+  if (id && !product)
     return <PageError title={getT("item_not_found", t)} noFullHeight />;
 
   return (

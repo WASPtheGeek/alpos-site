@@ -58,10 +58,15 @@ api.interceptors.response.use(
   }
 );
 
+export const simple_api = axios.create(apiConfig);
 export const generateRefreshToken = async () => {
   try {
-    await api.post(`/auth/refreshToken`);
+    await simple_api.post(`/auth/refreshToken`).catch(() => {
+      // todo: sholud logout somehow
+      throw Error;
+    });
   } catch (error) {
+    // todo: sholud logout somehow
     console.error(error);
   }
 };

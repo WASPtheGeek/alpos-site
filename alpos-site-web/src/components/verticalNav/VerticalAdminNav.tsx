@@ -15,6 +15,7 @@ export default function VerticalAdminNav() {
     { url: "/admin/contacts", text: "contacts_page" },
   ];
 
+  // todo: fix mobile view
   return (
     <Nav type="vertical" className="w-1/5 border-t-2">
       <NavLinks type="vertical">

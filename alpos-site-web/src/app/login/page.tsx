@@ -72,10 +72,9 @@ export default function LoginForm() {
         <Button
           disabled={submitting}
           type="submit"
+          label="Login" // todo: localize
           className="p-2 border rounded-lg hover:bg-slate-200 hover:text-black transition-colors duration-300 w-full"
-        >
-          Login
-        </Button>
+        />
       </form>
     </main>
   );
