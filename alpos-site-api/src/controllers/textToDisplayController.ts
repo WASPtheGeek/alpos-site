@@ -40,6 +40,24 @@ export async function getTextByKey(req: Request, res: Response) {
   }
 }
 
+// Gets the full Text by id
+export async function getFullTextById(req: Request, res: Response) {
+  try {
+    const { id } = req.params;
+    const t = await prisma.textToDisplay.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    res.json(t);
+  } catch (error) {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.message });
+  }
+}
+
 // Gets all the TextToDisplay
 export async function getTexts(req: Request, res: Response) {
   try {
@@ -83,10 +101,11 @@ export async function createTextToDisplay(req: Request, res: Response) {
 export async function updateTextToDisplay(req: Request, res: Response) {
   try {
     const { key, lv, en, ru } = req.body;
+    const { id } = req.params;
 
     const text = await prisma.textToDisplay.update({
       where: {
-        key,
+        id,
       },
       data: {
         key,

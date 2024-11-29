@@ -32,6 +32,7 @@
 
   "cat_is_active": "Активна ли категория",
 
+  "field_key": "Ключ",
   "field_name_en": "Название EN",
   "field_name_lv": "Название LV",
   "field_name_ru": "Название RU",
@@ -66,7 +67,12 @@
   "table_price": "Цена",
   "table_priceExcludingVAT": "Цена без НДС",
 
+  "texts_page_new": "Новая текстовая запись",
+
   "post_page": "Пост",
+  "posts_page_new": "Новый пост",
+  "post_is_archived": "Архивирован ли пост",
+
   "field_title_en": "Заголовок EN",
   "field_title_lv": "Заголовок LV",
   "field_title_ru": "Заголовок RU",
@@ -74,12 +80,11 @@
   "table_title_lv": "Заголовок LV",
   "table_title_ru": "Заголовок RU",
   "table_is_archived": "Архивировано",
-  "posts_page_new": "Новый пост",
-  "post_is_archived": "Архивирован ли пост",
   "field_content_en": "Контент EN",
   "field_content_lv": "Контент LV",
   "field_content_ru": "Контент RU",
   "table_content_en": "Контент EN",
   "table_content_lv": "Контент LV",
-  "table_content_ru": "Контент RU"
+  "table_content_ru": "Контент RU",
+  "table_key": "Ключ"
 }

@@ -32,6 +32,7 @@
 
   "cat_is_active": "Is category active",
 
+  "field_key": "Key",
   "field_name_en": "Name EN",
   "field_name_lv": "Name LV",
   "field_name_ru": "Name RU",
@@ -66,7 +67,12 @@
   "table_price": "EUR",
   "table_priceExcludingVAT": "EUR excl. VAT",
 
+  "texts_page_new": "New text record",
+
   "post_page": "Post",
+  "posts_page_new": "New post",
+  "post_is_archived": "Is post archived",
+
   "field_title_en": "Title EN",
   "field_title_lv": "Title LV",
   "field_title_ru": "Title RU",
@@ -74,12 +80,11 @@
   "table_title_lv": "Title LV",
   "table_title_ru": "Title RU",
   "table_is_archived": "Archived",
-  "posts_page_new": "New post",
-  "post_is_archived": "Is post archived",
   "field_content_en": "Content EN",
   "field_content_lv": "Content LV",
   "field_content_ru": "Content RU",
   "table_content_en": "Content EN",
   "table_content_lv": "Content LV",
-  "table_content_ru": "Content RU"
+  "table_content_ru": "Content RU",
+  "table_key": "Key"
 }

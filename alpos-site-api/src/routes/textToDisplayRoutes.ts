@@ -3,6 +3,7 @@ import {
   createTextToDisplay,
   deleteTextToDisplay,
   getTextByKey,
+  getFullTextById,
   getTexts,
   updateTextToDisplay,
 } from "../controllers";
@@ -24,6 +25,8 @@ textToDisplayRouter.get("/key", checkLanguage, getTextByKey);
 // Gets all the TextToDisplay
 textToDisplayRouter.get("/", verifyToken, getTexts);
 
+textToDisplayRouter.get("/full/:id", verifyToken, getFullTextById);
+
 // Creates a new TextToDisplay
 textToDisplayRouter.post(
   "/",
@@ -34,7 +37,7 @@ textToDisplayRouter.post(
 
 // Updates the TextToDisplay
 textToDisplayRouter.put(
-  "/",
+  "/:id",
   verifyToken,
   validate(TextToDisplayUpdateInputSchema),
   updateTextToDisplay

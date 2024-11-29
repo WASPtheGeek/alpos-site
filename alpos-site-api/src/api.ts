@@ -69,7 +69,7 @@ app.use("/auth", authRouter);
 app.use("/posts", postRouter);
 app.use("/products", productRouter);
 app.use("/categories", categoryRouter);
-app.use("/textToDisplay", textToDisplayRouter);
+app.use("/texts", textToDisplayRouter);
 
 // start server
 const PORT = process.env.PORT!;
