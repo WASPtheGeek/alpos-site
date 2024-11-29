@@ -35,6 +35,8 @@ export async function updateToken(req: Request, res: Response) {
       (err: VerifyErrors | null, user: any) => {
         if (err) {
           res.status(StatusCodes.FORBIDDEN).json({ message: err.message });
+
+          return;
         }
 
         const accessToken = generateAccessToken(user);
